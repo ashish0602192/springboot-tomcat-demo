@@ -1,0 +1,11 @@
+package com.demo.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class HelloService {
+
+    public String getMessage() {
+        return "Spring Boot deployed successfully on External Tomcat!";
+    }
+}
