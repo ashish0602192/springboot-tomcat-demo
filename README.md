@@ -28,3 +28,5 @@ http://localhost:8080/springboot-tomcat-demo/actuator/info
 
 Metrics:
 http://localhost:8080/springboot-tomcat-demo/actuator/metrics
+
+LAB 3.5 RESET TEST - This commit will be reset.
