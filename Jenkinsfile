@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK-21'
+        maven 'Maven-3.9.11'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -10,15 +15,9 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build & Test') {
             steps {
                 bat 'call mvn clean package'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'call mvn test'
             }
         }
 
@@ -27,6 +26,20 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.war',
                                  fingerprint: true
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'CI Pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'CI Pipeline failed. Check the stage logs for details.'
+        }
+
+        always {
+            echo 'Jenkins CI Pipeline execution completed.'
         }
     }
 }
