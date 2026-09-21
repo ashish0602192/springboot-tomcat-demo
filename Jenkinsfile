@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                bat 'call mvn clean package-invalid'
+                bat 'call mvn clean package'
             }
         }
 
