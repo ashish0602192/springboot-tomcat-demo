@@ -28,3 +28,6 @@ http://localhost:8080/springboot-tomcat-demo/actuator/info
 
 Metrics:
 http://localhost:8080/springboot-tomcat-demo/actuator/metrics
+
+## Jenkins CI
+#This project uses Jenkins Pipeline as Code for continuous integration.
