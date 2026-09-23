@@ -15,6 +15,12 @@ pipeline {
             }
         }
 
+        stage('Identify Build') {
+            steps {
+                bat 'git rev-parse --short HEAD'
+            }
+        }
+
         stage('Build & Test') {
             steps {
                 bat 'call mvn clean package'
